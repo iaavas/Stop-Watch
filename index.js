@@ -22,7 +22,7 @@ function getTimer() {
 }
 
 resetBtn.addEventListener("click", () => {
-  timer = false;
+  
   hr = 0;
   min = 0;
   sec = 0;
@@ -32,6 +32,8 @@ resetBtn.addEventListener("click", () => {
   document.getElementById("sec").innerHTML = "00";
   document.getElementById("innerLap").innerHTML = "";
   arr = [];
+  startBtn.classList.toggle("active_btn");
+  timer = false;
 });
 
 function startTimer() {
@@ -105,7 +107,7 @@ function showLap() {
     document.getElementById("innerLap").innerHTML = "";
   }
 
-  tag.innerHTML = `${timeArr[0] ?? 00}:${timeArr[1] ?? 00}:${timeArr[2] ?? 00}`;
+  tag.innerHTML = `${timeArr[0] ?? "00"}:${timeArr[1] ?? "00"}:${timeArr[2] ?? "00"}`;
 
   document.getElementById("innerLap").append(tag);
 }
