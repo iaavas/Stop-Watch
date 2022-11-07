@@ -44,12 +44,11 @@ function startTimer() {
   }
 
   if (timer == true) {
-    count++;
+    
 
-    if (count == 100) {
+    
       sec++;
-      count = 0;
-    }
+    
 
     if (sec == 60) {
       min++;
@@ -79,15 +78,13 @@ function startTimer() {
       secString = "0" + secString;
     }
 
-    if (count < 10) {
-      countString = "0" + countString;
-    }
+    
 
     document.getElementById("hr").innerText = hrString;
     document.getElementById("min").innerText = minString;
     document.getElementById("sec").innerText = secString;
 
-    setTimeout(startTimer, 10);
+    setTimeout(startTimer, 1050);
     arr = [hrString, minString, secString];
   }
 }
